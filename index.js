@@ -54,18 +54,11 @@ app.use("/users", userRoutes);
 app.use("/posts", postRoutes);
 
 /* CSP Helmet */
-App.use(helmet({
-    contentSecurityPolicy: {
-        directives: {
-            defaultSrc: ["'self'"],
-            scriptSrc: ["'self'", "'unsafe-inline'"],
-            styleSrc: ["'self'"],
-            imgSrc: ["*", 'data:'],
-            connectSrc: ["'self'"],
-            frameSrc: ["'self'"],
-        },
-    }
-}));
+app.use(
+  helmet({
+    contentSecurityPolicy: false,
+  })
+);
 
 /* STATIC FILES - YT */
 app.use(express.static(path.join(__dirname, "./client/build")));
