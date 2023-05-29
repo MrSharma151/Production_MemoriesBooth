@@ -56,7 +56,12 @@ app.use("/posts", postRoutes);
 /* CSP Helmet */
 app.use(
   helmet({
-    contentSecurityPolicy: false,
+    contentSecurityPolicy: {
+      directives: {
+        ...helmet.contentSecurityPolicy.getDefaultDirectives(),
+        "script-src": ["'self'", "'unsafe-inline'", "example.com"],
+      },
+    },
   })
 );
 
