@@ -58,7 +58,7 @@ app.use(helmet({
   contentSecurityPolicy: {
     directives: {
       defaultSrc: ["'self'"],
-      connectSrc: ["'self'", 'https://memoriesbooth.onrender.com/','http://127.0.0.1:3001' ,'http://127.0.0.1:6001']
+      connectSrc: ["'self'", '*', 'unsafe-inline', 'https://*.onrender.com/','http://127.0.0.1:3001' ,'http://127.0.0.1:6001']
     }
   }
 }));
