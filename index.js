@@ -59,7 +59,7 @@ app.use(helmet({
     directives: {
       defaultSrc: ["'self'"],
       connectSrc: ["'self'", '*', 'unsafe-inline', 'https://*.onrender.com/','http://127.0.0.1:3001' ,'http://127.0.0.1:6001'],
-      img-src: ['self', '*' , 'unsafe-inline', 'data:']
+      imgSrc: ["'self'", '*' , 'unsafe-inline', 'data:','https://*.onrender.com/','http://127.0.0.1:3001' ,'http://127.0.0.1:6001']
     }
   }
 }));
